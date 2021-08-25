@@ -10,9 +10,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Icon from '@material-ui/core/Icon';
 // core components
-import Card from 'components/Card/Card.js';
-import CardBody from 'components/Card/CardBody.js';
-import CardHeader from 'components/Card/CardHeader.js';
+import Card from '../card/Card.js';
+import CardBody from '../card/CardBody.js';
+import CardHeader from '../card/CardHeader.js';
 
 import styles from 'styles/jss/nextjs-material-kit/components/customTabsStyle.js';
 
@@ -97,7 +97,7 @@ CustomTabs.propTypes = {
       tabName: PropTypes.string.isRequired,
       tabIcon: PropTypes.object,
       tabContent: PropTypes.node.isRequired,
-    })
+    }),
   ),
   rtlActive: PropTypes.bool,
   plainTabs: PropTypes.bool,

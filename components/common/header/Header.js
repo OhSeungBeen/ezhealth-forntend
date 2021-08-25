@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 // nodejs library that concatenates classes
 import classNames from 'classnames';

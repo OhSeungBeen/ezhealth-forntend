@@ -54,7 +54,7 @@ export default function Footer(props) {
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{' '}
+          &copy; {1900 + new Date().getYear()} made with{' '}
           <Favorite className={classes.icon} /> by{' '}
           <a
             href="https://www.instagram.com/5__teven/"

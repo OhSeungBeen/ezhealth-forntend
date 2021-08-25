@@ -10,8 +10,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer.js';
-import GridItem from 'components/Grid/GridItem.js';
+import GridContainer from '../grid/GridContainer.js';
+import GridItem from '../grid/GridItem.js';
 
 import styles from 'styles/jss/nextjs-material-kit/components/navPillsStyle.js';
 
@@ -109,7 +109,7 @@ NavPills.propTypes = {
       tabButton: PropTypes.string,
       tabIcon: PropTypes.object,
       tabContent: PropTypes.node,
-    })
+    }),
   ).isRequired,
   color: PropTypes.oneOf([
     'primary',

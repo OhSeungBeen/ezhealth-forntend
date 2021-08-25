@@ -5,12 +5,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Tooltip from '@material-ui/core/Tooltip';
+import Avatar from '@material-ui/core/Avatar';
 
-import Icon from '@material-ui/core/Icon';
 import PersonIcon from '@material-ui/icons/Person';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-import Button from 'components/CustomButtons/Button.js';
+import Button from '../../buttons/Button.js';
 
 import styles from 'styles/jss/nextjs-material-kit/components/headerLinksStyle.js';
 
@@ -18,25 +18,57 @@ const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
+  const { user, onLogout } = props;
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Link href="/join" as="/join">
-          <Button color="transparent" className={classes.navLink}>
-            <PersonIcon className={classes.icons} />
-            Join
-          </Button>
-        </Link>
-      </ListItem>
+      {user ? (
+        <>
+          <ListItem className={classes.listItem}>
+            <Button
+              justIcon
+              round
+              href="#pablo"
+              className={classes.notificationNavLink}
+              onClick={(e) => e.preventDefault()}
+              color="primary"
+            >
+              {user.username[0]}
+            </Button>
+          </ListItem>
+          <ListItem className={classes.listItem}>
+            <Link href="/" as="/">
+              <Button
+                color="transparent"
+                className={classes.navLink}
+                onClick={onLogout}
+              >
+                <ExitToAppIcon className={classes.icons} />
+                Logout
+              </Button>
+            </Link>
+          </ListItem>
+        </>
+      ) : (
+        <>
+          <ListItem className={classes.listItem}>
+            <Link href="/register" as="/register">
+              <Button color="transparent" className={classes.navLink}>
+                <PersonIcon className={classes.icons} />
+                Join
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem className={classes.listItem}>
+            <Link href="/login" as="/login">
+              <Button color="transparent" className={classes.navLink}>
+                <ExitToAppIcon className={classes.icons} />
+                Login
+              </Button>
+            </Link>
+          </ListItem>
+        </>
+      )}
 
-      <ListItem className={classes.listItem}>
-        <Link href="/login" as="/login">
-          <Button color="transparent" className={classes.navLink}>
-            <ExitToAppIcon className={classes.icons} />
-            Login
-          </Button>
-        </Link>
-      </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
           id="youtube"

@@ -3,33 +3,22 @@ import classNames from 'classnames';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import Header from 'components/Header/Header.js';
-import HeaderLinks from 'components/Header/HeaderLinks.js';
-import Footer from 'components/Footer/Footer.js';
-import GridContainer from 'components/Grid/GridContainer.js';
-import GridItem from 'components/Grid/GridItem.js';
-import Parallax from 'components/Parallax/Parallax.js';
+import Footer from '../components/footer/Footer.js';
+import GridContainer from '../components/grid/GridContainer.js';
+import GridItem from '../components/grid/GridItem.js';
+import Parallax from '../components/parallax/Parallax.js';
 
 import styles from '../styles/jss/nextjs-material-kit/pages/index.js';
+
+import HeaderContainer from '../containers/common/HeaderContainer.js';
 
 const useStyles = makeStyles(styles);
 
 export default function index(props) {
   const classes = useStyles();
-  const { ...rest } = props;
   return (
     <div>
-      <Header
-        brand="EZhealth"
-        rightLinks={<HeaderLinks />}
-        fixed
-        color="transparent"
-        changeColorOnScroll={{
-          height: 400,
-          color: 'white',
-        }}
-        {...rest}
-      />
+      <HeaderContainer />
       <Parallax image="/img/header.jpg">
         <div className={classes.container}>
           <GridContainer>
