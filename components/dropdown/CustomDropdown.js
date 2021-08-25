@@ -16,7 +16,7 @@ import Icon from '@material-ui/core/Icon';
 import Popper from '@material-ui/core/Popper';
 
 // core components
-import Button from 'components/CustomButtons/Button.js';
+import Button from '../buttons/Button.js';
 
 import styles from 'styles/jss/nextjs-material-kit/components/customDropdownStyle.js';
 

@@ -53,7 +53,9 @@ const headerStyle = {
     flex: 1,
   },
   title: {
-    ...defaultFont,
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontWeight: '900',
+    lineHeight: '1.5em',
     lineHeight: '30px',
     fontSize: '18px',
     borderRadius: '3px',

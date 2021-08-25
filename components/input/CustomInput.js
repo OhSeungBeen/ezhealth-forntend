@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
+import { FormHelperText } from '../../node_modules/@material-ui/core/index';
 
 import styles from 'styles/jss/nextjs-material-kit/components/customInputStyle.js';
 
@@ -25,6 +26,11 @@ export default function CustomInput(props) {
     white,
     inputRootCustomClasses,
     success,
+    onChange,
+    name,
+    value,
+    errorText,
+    onKeyPress,
   } = props;
 
   const labelClasses = classNames({
@@ -48,7 +54,7 @@ export default function CustomInput(props) {
   if (formControlProps !== undefined) {
     formControlClasses = classNames(
       formControlProps.className,
-      classes.formControl
+      classes.formControl,
     );
   } else {
     formControlClasses = classes.formControl;
@@ -72,8 +78,15 @@ export default function CustomInput(props) {
           underline: underlineClasses,
         }}
         id={id}
+        onChange={onChange}
         {...inputProps}
+        name={name}
+        value={value}
+        onKeyPress={onKeyPress}
       />
+      {formControlProps.error && (
+        <FormHelperText id="component-error-text">{errorText}</FormHelperText>
+      )}
     </FormControl>
   );
 }
@@ -88,4 +101,6 @@ CustomInput.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool,
   white: PropTypes.bool,
+  errorText: PropTypes.string,
+  onKeyPress: PropTypes.func,
 };

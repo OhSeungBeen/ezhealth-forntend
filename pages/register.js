@@ -5,13 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import HeaderContainer from '../containers/common/HeaderContainer.js';
 import Footer from '../components/footer/Footer.js';
 
-import LoginForm from '../containers/auth/LoginContainer';
+import RegisterForm from '../containers/auth/RegisterContainer';
 
 import styles from 'styles/jss/nextjs-material-kit/pages/loginPage.js';
 
 const useStyles = makeStyles(styles);
 
-const Login = () => {
+const Register = () => {
   const classes = useStyles();
   return (
     <div>
@@ -19,16 +19,16 @@ const Login = () => {
       <div
         className={classes.pageHeader}
         style={{
-          backgroundImage: "url('/img/login.jpg')",
+          backgroundImage: "url('/img/register.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
         }}
       >
-        <LoginForm />
+        <RegisterForm />
         <Footer whiteFont />
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
