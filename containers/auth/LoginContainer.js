@@ -18,7 +18,7 @@ import CardBody from '../../components/card/CardBody.js';
 import CardHeader from '../../components/card/CardHeader.js';
 import CardFooter from '../../components/card/CardFooter.js';
 import CustomInput from '../../components/input/CustomInput.js';
-import Danger from 'components/Typography/Danger.js';
+import Danger from '../../components/typography/Danger.js';
 
 import styles from 'styles/jss/nextjs-material-kit/pages/loginPage.js';
 
@@ -78,6 +78,7 @@ const LoginForm = () => {
       error: false,
       errorText: '',
     });
+
     setErrorPassword({
       ...errorPassword,
       error: false,
@@ -129,7 +130,7 @@ const LoginForm = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(initializeAction('login'));
+    dispatch(countAllAction());
   }, [dispatch]);
 
   // 로그인 상태일 경우
@@ -259,11 +260,7 @@ const LoginForm = () => {
                   value={login.password}
                   onKeyPress={onKeyPress}
                 />
-                {error && (
-                  <Danger>
-                    <h6>{error.errorText}</h6>
-                  </Danger>
-                )}
+                {error && <Danger>{error.errorText}</Danger>}
               </CardBody>
               <CardFooter className={classes.cardFooter}>
                 <Button simple color="primary" size="lg" onClick={onSubmit}>

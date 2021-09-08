@@ -7,9 +7,9 @@ import { createLogger } from 'redux-logger';
 import rootReducer, { rootSaga } from '../modules';
 
 const configureStore = () => {
-  const logger = createLogger();
+  //const logger = createLogger();
   const sagaMiddleware = createSagaMiddleware();
-  const middlewares = [sagaMiddleware, logger];
+  const middlewares = [sagaMiddleware /*logger*/];
   const enhancer =
     process.env.NODE_ENV === 'production'
       ? compose(applyMiddleware(...middlewares))

@@ -9,7 +9,6 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import Person from '@material-ui/icons/Person';
 // validator
 import joi from '../../node_modules/joi/lib';
-import joiPassword from '../../node_modules/joi-password-complexity/lib';
 // core components
 import GridContainer from '../../components/grid/GridContainer.js';
 import GridItem from '../../components/grid/GridItem.js';

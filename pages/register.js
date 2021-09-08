@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import HeaderContainer from '../containers/common/HeaderContainer.js';
 import Footer from '../components/footer/Footer.js';
 
-import RegisterForm from '../containers/auth/RegisterContainer';
+import RegisterFormContainer from '../containers/auth/RegisterContainer';
 
 import styles from 'styles/jss/nextjs-material-kit/pages/loginPage.js';
 
@@ -24,7 +24,7 @@ const Register = () => {
           backgroundPosition: 'top center',
         }}
       >
-        <RegisterForm />
+        <RegisterFormContainer />
         <Footer whiteFont />
       </div>
     </div>

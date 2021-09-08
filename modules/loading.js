@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+import Login from '../pages/login';
 
 const START_LOADING = 'loading/START_LOADING';
 const FINISH_LOADING = 'loading/FINISH_LOADING';

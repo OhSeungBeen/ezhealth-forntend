@@ -20,6 +20,7 @@ const cardHeaderStyle = {
     marginLeft: '0px',
     marginRight: '0px',
   },
+
   warningCardHeader,
   successCardHeader,
   dangerCardHeader,
